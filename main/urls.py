@@ -11,13 +11,15 @@ from main.views import (
     show_xml_by_id, 
     show_json_by_id, 
     edit_news,
-    delete_news
+    delete_news,
+    add_news_entry_ajax
 )
 
 app_name = 'main'
 
 urlpatterns = [
     path('', show_main, name='show_main'),
+    path('create-news-ajax', add_news_entry_ajax, name='add_news_entry_ajax'),
     path('create-news/', create_news, name='create_news'),
     path('news/<str:id>/', show_news, name='show_news'),
     path('xml/', show_xml, name='show_xml'),
