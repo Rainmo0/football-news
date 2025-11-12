@@ -12,7 +12,9 @@ from main.views import (
     show_json_by_id, 
     edit_news,
     delete_news,
-    add_news_entry_ajax
+    add_news_entry_ajax,
+    proxy_image,
+    create_news_flutter
 )
 
 app_name = 'main'
@@ -30,5 +32,7 @@ urlpatterns = [
     path('login/', login_user, name='login'),
     path('logout/', logout_user, name='logout'),
     path('news/<uuid:id>/edit/', edit_news, name='edit_news'),
-    path('news/<uuid:id>/delete', delete_news, name='delete_news')
+    path('news/<uuid:id>/delete', delete_news, name='delete_news'),
+    path('proxy-image/', proxy_image, name='proxy_image'),
+    path('create-flutter/', create_news_flutter, name='create_news_flutter'),
 ]
